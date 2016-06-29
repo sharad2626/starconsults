@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'HelveticaInseratLTStd-Roman';
+  src: url('HelveticaInseratLTStd-Roman.eot');
+  src: url('HelveticaInseratLTStd-Roman.woff2') format('woff2'),
+       url('HelveticaInseratLTStd-Roman.woff') format('woff'),
+       url('HelveticaInseratLTStd-Roman.ttf') format('truetype'),
+       url('HelveticaInseratLTStd-Roman.svg#HelveticaInseratLTStd-Roman') format('svg'),
+       url('HelveticaInseratLTStd-Roman.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

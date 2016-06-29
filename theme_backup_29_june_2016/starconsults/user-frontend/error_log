@@ -1,0 +1,15 @@
+[06-Jun-2016 08:51:17 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 12
+[06-Jun-2016 08:51:18 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 13
+[06-Jun-2016 08:51:18 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 14
+[06-Jun-2016 08:51:45 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 12
+[06-Jun-2016 08:51:45 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 13
+[06-Jun-2016 08:51:45 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 14
+[06-Jun-2016 08:53:20 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 12
+[06-Jun-2016 08:53:20 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 13
+[06-Jun-2016 08:53:20 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 14
+[06-Jun-2016 09:00:35 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 12
+[06-Jun-2016 09:00:35 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 13
+[06-Jun-2016 09:00:35 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 14
+[06-Jun-2016 09:01:43 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 12
+[06-Jun-2016 09:01:43 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 13
+[06-Jun-2016 09:01:43 America/Denver] PHP Warning:  imagecolordeallocate() expects exactly 2 parameters, 1 given in /home/starcon5/public_html/wp-content/themes/starconsults/user-frontend/captcha.php on line 14

@@ -1,0 +1,39 @@
+<div class="leftbg">
+	  
+	  <?php 
+	  $usermeta = get_user_meta($user->data->ID, 'user_billing_shipping', true);
+$usermeta = unserialize($usermeta);
+$userBilling = $usermeta['billing'];
+	  
+	  
+	  $userImage = get_user_meta($user->data->ID, 'wpcf-consultants-image', true);
+	  
+	  
+	  ?>
+	  
+	  
+	  <?php if(empty($userImage)){
+	  	$userImage = IMAGES_URL.'/left-video-img.png';
+	  }?>
+	  
+        <div class="left-video" style="text-align:center"> <a href="#"><img src="<?php echo $userImage;?>" /></a></div>
+		
+		<div class="left-learning">
+		
+		<h3 style="border:0; padding-bottom:10px"><?php echo $userName;?></h3>
+		<?php if($userBilling && !empty($userBilling)){?>
+		<p><?php echo $userBilling['city'];?></p>
+		<?php }?>
+		<?php 
+		$section = get_query_var("section");
+		?>
+		<ul id="myTab" class="nav nav-pills nav-stacked">
+			<li <?php if(empty($section)){?>class="active"<?php }?>><a href="<?php echo get_bloginfo("siteurl").'/account';?>">Profile</a></li>
+			<li <?php if($section == "videos"){?>class="active"<?php }?>><a href="<?php echo get_bloginfo("siteurl").'/account/videos'?>">Videos</a></li>
+			<li <?php if($section == "message"){?>class="active"<?php }?>><a href="<?php echo get_bloginfo("siteurl").'/account/message'?>">Message</a></li>
+			
+			<?php /*?><li <?php if($section == "contact"){?>class="active"<?php }?>><a href="<?php echo get_bloginfo("siteurl").'/account/contact'?>">Contact</a></li><?php */?>
+		</ul>
+		</div>
+		
+      </div>

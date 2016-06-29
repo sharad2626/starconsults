@@ -1,0 +1,37 @@
+<?php 
+
+if ( ! is_user_logged_in() ) {
+	wp_safe_redirect( home_url( '/login/' ) );
+	exit;
+}
+$user = get_userdata( get_current_user_id() );
+$user->filter = 'edit';
+$profileuser = $user;
+
+$userName = $user->data->user_nicename;
+
+get_header();?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<div class="content-page clearfix">
+  <div class="container">
+    <div class="main-content">
+      <?php /*?><div class="bread"> <a href="#">Home</a> <span>></span> <a href="#">Mathematics</a> <span>></span> <span>step by step learning calculus</span> </div><?php */?>
+	  
+	 <?php /*?> <h2><?php _e( 'Profile', 'user-frontend-td' ); ?></h2><?php */?>
+			<?php echo apply_filters( 'uf_profile_messages', isset( $_GET[ 'message' ] ) ? $_GET[ 'message' ] : '' ); ?>
+	  
+	  
+      <div class="main-content-bg clearfix">
+		<div class="messages_wrapper">
+			<?php echo do_shortcode('[private_message]');?>
+		</div>		
+
+      </div>
+    </div>
+    <div class="left-side">
+      <?php require "account-sidebar.php";?>
+    </div>
+  </div>
+</div>
+<?php endwhile; endif;?>
+<?php get_footer();?>

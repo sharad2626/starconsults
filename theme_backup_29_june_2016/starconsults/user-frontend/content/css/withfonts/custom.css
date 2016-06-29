@@ -1,0 +1,140 @@
+﻿/*
+    FILE INFO
+  ========================================
+    WEBSITE NAME        - Website Name
+    WORK STARTED DATE   - 00.00.0000/00:00pm
+    CSS TYPE            - desktop only
+  ========================================  
+*/
+
+/*=====================================
+---------------------------------------
+F O N T F A C E  - S T A R T 
+---------------------------------------
+=======================================*/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+/*font-family: 'Open Sans', sans-serif;*/
+
+@font-face {font-family: 'robotoregular';src: url('../fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot');src: url('../fonts/roboto_regular_macroman/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/roboto_regular_macroman/Roboto-Regular-webfont.woff') format('woff'),url('../fonts/roboto_regular_macroman/Roboto-Regular-webfont.ttf') format('truetype'),url('../fonts/roboto_regular_macroman/Roboto-Regular-webfont.svg#robotoregular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'robotolight';src: url(../fonts/roboto_light_macroman/Roboto-Light-webfont.eot);src: url('../fonts/roboto_light_macroman/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/roboto_light_macroman/Roboto-Light-webfont.woff') format('woff'),url('../fonts/roboto_light_macroman/Roboto-Light-webfont.ttf') format('truetype'),url('../fonts/roboto_light_macroman/Roboto-Light-webfont.svg#robotolight') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'robotobold';src: url('../fonts/roboto_bold_macroman/Roboto-Bold-webfont.eot');src: url('../fonts/roboto_bold_macroman/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/roboto_bold_macroman/Roboto-Bold-webfont.woff') format('woff'),url('../fonts/roboto_bold_macroman/Roboto-Bold-webfont.ttf') format('truetype'),url('../fonts/roboto_bold_macroman/Roboto-Bold-webfont.svg#robotobold') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'ralewaybold';src: url('../fonts/raleway-bold-webfont.eot');src: url('../fonts/raleway-bold-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/raleway-bold-webfont.woff2') format('woff2'),url('../fonts/raleway-bold-webfont.woff') format('woff'),url('../fonts/raleway-bold-webfont.ttf') format('truetype');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'ralewayregular';src: url('../fonts/raleway-regular-webfont.eot');src: url('../fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/raleway-regular-webfont.woff2') format('woff2'),url('../fonts/raleway-regular-webfont.woff') format('woff'),url('../fonts/raleway-regular-webfont.ttf') format('truetype');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'FrutigerLTArabic45Light';src: url('../fonts/Frutiger/FrutigerLTArabic45Light.eot');src: url('../fonts/Frutiger/FrutigerLTArabic45Light.eot') format('embedded-opentype'),url('../fonts/Frutiger/FrutigerLTArabic45Light.woff2') format('woff2'),url('../fonts/Frutiger/FrutigerLTArabic45Light.woff') format('woff'),url('../fonts/Frutiger/FrutigerLTArabic45Light.ttf') format('truetype'),url('../fonts/Frutiger/FrutigerLTArabic45Light.svg#FrutigerLTArabic45Light') format('svg');}
+/****************/
+@font-face {font-family: 'din_euroregular';src: url('../fonts/DIN/DIN-Euro-webfont.eot');src: url('../fonts/DIN/DIN-Euro-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/DIN/DIN-Euro-webfont.woff2') format('woff2'),url('../fonts/DIN/DIN-Euro-webfont.woff') format('woff'),url('../fonts/DIN/DIN-Euro-webfont.ttf') format('truetype'),url('../fonts/DIN/DIN-Euro-webfont.svg#din_euroregular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'dinregular';src: url('../fonts/DIN/DIN-Regular-webfont.eot');src: url('../fonts/DIN/DIN-Regular-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/DIN/DIN-Regular-webfont.woff2') format('woff2'),url('../fonts/DIN/DIN-Regular-webfont.woff') format('woff'),url('../fonts/DIN/DIN-Regular-webfont.ttf') format('truetype'),url('../fonts/DIN/DIN-Regular-webfont.svg#dinregular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'din_blackregular';src: url('../fonts/DIN/DIN-Black-webfont.eot');src: url('../fonts/DIN/DIN-Black-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/DIN/DIN-Black-webfont.woff2') format('woff2'),url('../fonts/DIN/DIN-Black-webfont.woff') format('woff'),url('../fonts/DIN/DIN-Black-webfont.ttf') format('truetype'),url('../fonts/DIN/DIN-Black-webfont.svg#din_blackregular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'din_blackalternateregular';src: url('../fonts/DIN/DIN-BlackAlternate-webfont.eot');src: url('../fonts/DIN/DIN-BlackAlternate-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/DIN/DIN-BlackAlternate-webfont.woff2') format('woff2'),url('../fonts/DIN/DIN-BlackAlternate-webfont.woff') format('woff'),url('../fonts/DIN/DIN-BlackAlternate-webfont.ttf') format('truetype'),url('../fonts/DIN/DIN-BlackAlternate-webfont.svg#din_blackalternateregular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'dinbold';src: url('../fonts/DIN/DIN-Bold-webfont.eot');src: url('../fonts/DIN/DIN-Bold-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/DIN/DIN-Bold-webfont.woff2') format('woff2'),url('../fonts/DIN/DIN-Bold-webfont.woff') format('woff'),url('../fonts/DIN/DIN-Bold-webfont.ttf') format('truetype'),url('../fonts/DIN/DIN-Bold-webfont.svg#dinbold') format('svg');font-weight: normal;font-style: normal;}
+@font-face {   font-family: 'din_alternatebold';  src: url('../fonts/DIN/DIN-BoldAlternate-webfont.eot');   src: url('../fonts/DIN/DIN-BoldAlternate-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/DIN/DIN-BoldAlternate-webfont.woff2') format('woff2'),        url('../fonts/DIN/DIN-BoldAlternate-webfont.woff') format('woff'),        url('../fonts/DIN/DIN-BoldAlternate-webfont.ttf') format('truetype'),        url('../fonts/DIN/DIN-BoldAlternate-webfont.svg#din_alternatebold') format('svg');   font-weight: normal;   font-style: normal;}
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on February 25, 2015 */
+@font-face {   font-family: 'din_lightregular';   src: url('../fonts/DIN/DIN-Light-webfont.eot');   src: url('../fonts/DIN/DIN-Light-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/DIN/DIN-Light-webfont.woff2') format('woff2'),        url('../fonts/DIN/DIN-Light-webfont.woff') format('woff'),        url('../fonts/DIN/DIN-Light-webfont.ttf') format('truetype'),        url('../fonts/DIN/DIN-Light-webfont.svg#din_lightregular') format('svg');   font-weight: normal;   font-style: normal;}
+@font-face {   font-family: 'din_lightalternateregular';   src: url('../fonts/DIN/DIN-LightAlternate-webfont.eot');   src: url('../fonts/DIN/DIN-LightAlternate-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/DIN/DIN-LightAlternate-webfont.woff2') format('woff2'),        url('../fonts/DIN/DIN-LightAlternate-webfont.woff') format('woff'),        url('../fonts/DIN/DIN-LightAlternate-webfont.ttf') format('truetype'),        url('../fonts/DIN/DIN-LightAlternate-webfont.svg#din_lightalternateregular') format('svg');   font-weight: normal;   font-style: normal;}
+
+@font-face {   font-family: 'din_alternatemedium';   src: url('../fonts/DIN/DIN-MediumAlternate-webfont.eot');   src: url('../fonts/DIN/DIN-MediumAlternate-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/DIN/DIN-MediumAlternate-webfont.woff2') format('woff2'),        url('../fonts/DIN/DIN-MediumAlternate-webfont.woff') format('woff'),        url('../fonts/DIN/DIN-MediumAlternate-webfont.ttf') format('truetype'),        url('../fonts/DIN/DIN-MediumAlternate-webfont.svg#din_alternatemedium') format('svg');   font-weight: normal;   font-style: normal;}
+@font-face {   font-family: 'ge_thameenBook';   src: url('../fonts/GEThameen/GEThameen-Book-webfont.eot');   src: url('../fonts/GEThameen/GEThameen-Book-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/GEThameen/GEThameen-Book-webfont.woff2') format('woff2'),        url('../fonts/GEThameen/GEThameen-Book-webfont.woff') format('woff'),        url('../fonts/GEThameen/GEThameen-Book-webfont.ttf') format('truetype'),        url('../fonts/GEThameen/GEThameen-Book-webfont.svg#ge_thameenregular') format('svg');   font-weight: normal;   font-style: normal;}
+/**********/
+@font-face {   font-family: 'ge_thameenBookI';   src: url('../fonts/GEThameen/GEThameen-BookItalic-webfont.eot');   src: url('../fonts/GEThameen/GEThameen-BookItalic-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/GEThameen/GEThameen-BookItalic-webfont.woff2') format('woff2'),        url('../fonts/GEThameen/GEThameen-BookItalic-webfont.woff') format('woff'),        url('../fonts/GEThameen/GEThameen-BookItalic-webfont.ttf') format('truetype'),        url('../fonts/GEThameen/GEThameen-BookItalic-webfont.svg#ge_thameenregular') format('svg');   font-weight: normal;   font-style: normal;}
+@font-face {   font-family: 'ge_thameenB';   src: url('../fonts/GEThameen/GEThameen-DemiBold-webfont.eot');   src: url('../fonts/GEThameen/GEThameen-DemiBold-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/GEThameen/GEThameen-DemiBold-webfont.woff2') format('woff2'),        url('../fonts/GEThameen/GEThameen-DemiBold-webfont.woff') format('woff'),        url('../fonts/GEThameen/GEThameen-DemiBold-webfont.ttf') format('truetype'),       url('../fonts/GEThameen/GEThameen-DemiBold-webfont.svg#ge_thameenregular') format('svg');   font-weight: normal;   font-style: normal;}
+@font-face {   font-family: 'ge_thameenBI';   src: url('../fonts/GEThameen/GEThameen-DemiBoldItalic-webfont.eot');   src: url('../fonts/GEThameen/GEThameen-DemiBoldItalic-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/GEThameen/GEThameen-DemiBoldItalic-webfont.woff2') format('woff2'),        url('../fonts/GEThameen/GEThameen-DemiBoldItalic-webfont.woff') format('woff'),        url('../fonts/GEThameen/GEThameen-DemiBoldItalic-webfont.ttf') format('truetype'),        url('../fonts/GEThameen/GEThameen-DemiBoldItalic-webfont.svg#ge_thameenregular') format('svg');   font-weight: normal;   font-style: normal;}
+@font-face {   font-family: 'ge_thameenL';   src: url('../fonts/GEThameen/GEThameen-Light-webfont.eot');   src: url('../fonts/GEThameen/GEThameen-Light-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/GEThameen/GEThameen-Light-webfont.woff2') format('woff2'),        url('../fonts/GEThameen/GEThameen-Light-webfont.woff') format('woff'),        url('../fonts/GEThameen/GEThameen-Light-webfont.ttf') format('truetype'),        url('../fonts/GEThameen/GEThameen-Light-webfont.svg#ge_thameenregular') format('svg');   font-weight: normal;   font-style: normal;}
+@font-face {   font-family: 'ge_thameenLI';   src: url('../fonts/GEThameen/GEThameen-LightItalic-webfont.eot');   src: url('../fonts/GEThameen/GEThameen-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/GEThameen/GEThameen-LightItalic-webfont.woff2') format('woff2'),        url('../fonts/GEThameen/GEThameen-LightItalic-webfont.woff') format('woff'),        url('../fonts/GEThameen/GEThameen-LightItalic-webfont.ttf') format('truetype'),        url('../fonts/GEThameen/GEThameen-LightItalic-webfont.svg#ge_thameenregular') format('svg');   font-weight: normal;   font-style: normal;}
+/**********/
+@font-face {   font-family: 'ge_dinar_Medium';   src: url('../fonts/Dinar/GEDinarOne-Medium-webfont.eot');   src: url('../fonts/Dinar/GEDinarOne-Medium-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/Dinar/GEDinarOne-Medium-webfont.woff2') format('woff2'),        url('../fonts/Dinar/GEDinarOne-Medium-webfont.woff') format('woff'),        url('../fonts/Dinar/GEDinarOne-Medium-webfont.ttf') format('truetype'),        url('../fonts/Dinar/GEDinarOne-Medium-webfont.svg#ge_dinar_oneregular') format('svg');   font-weight: normal;   font-style: normal;}
+@font-face {   font-family: 'ge_dinar_Light2';   src: url('../fonts/Dinar/GEDinarOne-Light 2-webfont.eot');   src: url('../fonts/Dinar/GEDinarOne-Light 2-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/Dinar/GEDinarOne-Light 2-webfont.woff2') format('woff2'),        url('../fonts/Dinar/GEDinarOne-Light 2-webfont.woff') format('woff'),        url('../fonts/Dinar/GEDinarOne-Light 2-webfont.ttf') format('truetype'),        url('../fonts/Dinar/GEDinarOne-Light 2-webfont.svg#ge_dinar_oneregular') format('svg');   font-weight: normal;   font-style: normal;}
+@font-face {   font-family: 'ge_dinar_Light';   src: url('../fonts/Dinar/GEDinarOne-Light-webfont.eot');   src: url('../fonts/Dinar/GEDinarOne-Light-webfont.eot?#iefix') format('embedded-opentype'),        url('../fonts/Dinar/GEDinarOne-Light-webfont.woff2') format('woff2'),        url('../fonts/Dinar/GEDinarOne-Light-webfont.woff') format('woff'),        url('../fonts/Dinar/GEDinarOne-Light-webfont.ttf') format('truetype'),        url('../fonts/Dinar/GEDinarOne-Light-webfont.svg#ge_dinar_oneregular') format('svg');   font-weight: normal;   font-style: normal;}
+@font-face {font-family: 'ge_dinar_LI';src: url('../fonts/Dinar/GEDinarOne-LightItalic-webfont.eot');src: url('../fonts/Dinar/GEDinarOne-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/Dinar/GEDinarOne-LightItalic-webfont.woff2') format('woff2'),url('../fonts/Dinar/GEDinarOne-LightItalic-webfont.woff') format('woff'),url('../fonts/Dinar/GEDinarOne-LightItalic-webfont.ttf') format('truetype'),url('../fonts/Dinar/GEDinarOne-LightItalic-webfont.svg#ge_dinar_oneregular') format('svg');font-weight: normal;font-style: normal;}
+@font-face {font-family: 'ge_dinar_Medium2';src: url('../fonts/Dinar/GEDinarOne-Medium 2-webfont.eot');src: url('../fonts/Dinar/GEDinarOne-Medium 2-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/Dinar/GEDinarOne-Medium 2-webfont.woff2') format('woff2'),url('../fonts/Dinar/GEDinarOne-Medium 2-webfont.woff') format('woff'),url('../fonts/Dinar/GEDinarOne-Medium 2-webfont.ttf') format('truetype'),url('../fonts/Dinar/GEDinarOne-Medium 2-webfont.svg#ge_dinar_oneregular') format('svg');font-weight: normal;font-style: normal;}
+
+
+
+
+
+
+
+/*=====================================
+---------------------------------------
+F O N T F A C E  - END
+---------------------------------------
+=======================================*/
+
+
+
+/*========================================
+  ========================================
+  Generic CSS           -            START
+  ========================================
+  ========================================
+*/
+/*body.site_bg {background: url('../images/slider_BG.jpg') 0px 74px repeat-x;float: left; width: 100%;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; }
+body.site_bg2 {background: url('../images/inner_bgImages.png') 0px 74px repeat-x;float: left;width: 100%;background-color: #fff;}*/
+*{margin:0;padding:0;border:0;}
+:focus{outline:0;}
+ol, ul{list-style:none;}
+a{text-decoration:none;color:#78797f;cursor:pointer;}
+/*h3,h4,h5,h6*/
+h2{font-size:1.688em;text-transform:capitalize;font-weight:normal;color:#fff;font-family:'helvetica-neue-light',arial;}
+h3{font-size:1.313em;color:#fff;text-transform:uppercase;font-weight:normal;font-family:'helvetica-neue-light',arial;padding:12px;}
+h4{font-size:2.063em;font-family:'helvetica-neue-medium',arial;color:#fff;font-weight:normal;text-transform:uppercase;font-weight:normal;}
+h5{font-size:1.500em;font-family:'helvetica-neue-medium',arial;color:#fff;font-weight:normal;text-transform:uppercase;font-weight:normal;padding:12px;}
+h6{font-weight:normal;font-family:'helvetica-neue-medium',arial;color:#fff;font-weight:normal;text-transform:capitalize;font-weight:normal;font-size:1.375em;}
+p{color:#fff;font-size:0.875em;font-family:'helvetica-neue-light',arial;}
+input[type="text"]{border:1px solid #dbdcdd;padding:0px 0px 2px 8px;font-size:0.875em; color:#54534a !important; background:#dedede; border-radius: 50px;}
+input[type="submit"]{background:#4EC287;border:none;color:#fff;font-family:'helvetica-neue-medium',arial;text-transform:capitalize;padding:10px;cursor:pointer;}
+.clearfix:after{content:" ";visibility:hidden;display:block;height:0;clear:both;}
+.clrBoth {clear:both;}
+.clrLeft {clear:left;}
+.clrRight {clear:right;}
+.container {width:100%; max-width:980px; margin:0 auto;}
+.left{float:left;}
+.right{float:right;}
+.mb12{margin-bottom:12px;}
+.ml20{margin-left:20px;}
+.mr20{margin-right:20px;}
+.mrT10{margin-top:10px;}
+.mrT20{margin-top:20px;}
+.mrT30{margin-top:30px;}
+.mrT40{margin-top:40px;}
+.mrT50{margin-top:50px;}
+.mrT52{margin-top:52px;}
+.mrT60{margin-top:60px;}
+.mb6{margin-bottom:6px;}
+.mrB20{margin-bottom:20px;}
+.mrB24{margin-bottom:24px;}
+.mrR6{margin-right:6px;}
+.mt12{margin-top:12px;}
+.pdF{  padding: 20px 0 14px 0;}
+.wd400{width:400px;}
+.wd200{width:200px;}
+.black_color,.black_color p,.black_color span,.black_color h1,.black_color h2,.black_color h3,.black_color h4,.black_color h5,.black_color h6{color:#5b5b5d;}
+
+/*wrappers setting start*/
+.wrap30 {width:30%;float:left;}
+.wrap40 {width:40%;float:left;}
+.wrap50 {width:50%;float:left;}
+.wrap60 {width:60%;float:left;}
+.wrap70 {width:70%;float:left;}
+/*wrappers setting end*/
+
+/*========================================
+  ========================================
+  Generic CSS           -              END
+  ========================================
+  ========================================
+*/
+
+/*========================================
+  ========================================
+  Site Style           -           START
+  ========================================
+  ========================================
+*/
+
+/*========================================
+  ========================================
+  Site Style           -             END
+  ========================================
+  ========================================
+*/

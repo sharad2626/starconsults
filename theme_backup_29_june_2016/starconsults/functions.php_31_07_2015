@@ -1,0 +1,323 @@
+<?php 
+
+
+
+function register_customization() {
+  register_nav_menus(
+    array(
+      'header-menu' => __( 'Header Menu' ),
+      'footer-menu' => __( 'Footer Menu' )
+    )
+  );
+  
+  register_sidebar( array(
+		'name'          => 'Footer Column 1',
+		'id'            => 'footer_column_1',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 class="footer_title">',
+		'after_title'   => '</h2>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => 'Footer Column 2',
+		'id'            => 'footer_column_2',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 class="footer_title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => 'Footer Column 3',
+		'id'            => 'footer_column_3',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 class="footer_title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => 'Footer Column 4',
+		'id'            => 'footer_column_4',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 class="footer_title">',
+		'after_title'   => '</h2>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => 'Left Sidebar',
+		'id'            => 'left_sidebar',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 style="display:none">',
+		'after_title'   => '</h2>',
+	) );
+	
+	
+  
+}
+add_action( 'init', 'register_customization' );
+
+add_filter( 'wp_nav_menu_objects', 'add_menu_parent_class' );
+function add_menu_parent_class( $items ) {
+	$parents = array();
+	foreach ( $items as $item ) {
+		if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
+			$parents[] = $item->menu_item_parent;
+		}
+	}
+	foreach ( $items as $item ) {
+		if ( in_array( $item->ID, $parents ) ) {
+			$item->classes[] = 'dropdown'; 
+		}
+	}
+	
+	return $items;    
+}
+
+class Nav_Walker_Nav_Menu extends Walker_Nav_Menu {
+     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        global $wp_query;
+        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+        $class_names = '';
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $classes[] = 'menu-item-' . $item->ID;
+        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+        $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+        $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+        $output .= $indent . '<li' . $id . $class_names .'>';
+        $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+        $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+        $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+        $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+		
+				
+		if (in_array("dropdown", $classes)) {			
+			$attributes .= 'class="dropdown-toggle" data-toggle="dropdown"';
+		}
+		
+		
+
+        $item_output = $args->before;
+        $item_output .= '<a'. $attributes .'>';
+        
+		if (in_array("dropdown", $classes)) {			
+			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) .'<b class="caret"></b>'. $args->link_after;
+		}else{
+			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+		}
+        
+		
+		
+		
+		if ( 'primary' == $args->theme_location ) {
+            $submenus = 0 == $depth || 1 == $depth ? get_posts( array( 'post_type' => 'nav_menu_item', 'numberposts' => 1, 'meta_query' => array( array( 'key' => '_menu_item_menu_item_parent', 'value' => $item->ID, 'fields' => 'ids' ) ) ) ) : false;
+            $item_output .= ! empty( $submenus ) ? ( 0 == $depth ? '<span class="arrow"></span>' : '<span class="sub-arrow"></span>' ) : '';
+        }
+        $item_output .= '</a>';
+        $item_output .= $args->after;
+
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+    }
+	
+	function start_lvl(&$output, $depth) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
+	}
+	function end_lvl(&$output, $depth) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent</ul>\n";
+	}
+}
+add_filter( 'wp_nav_menu_items', 'add_loginout_link', 10, 2 );
+function add_loginout_link( $items, $args ) {
+	
+	if ($args->menu_class == 'nav navbar-nav') {
+        $items .= '<li class="search" id="searchLink"><a class="searcha" href="javascript:;"><img src="'.THEME_URL.'/images/search-icon.png" class="search" title="Search"  alt="Search"></a>
+		
+<div class="search_header_form">
+	<form method="post" id="searchform2" class="searchform2" action="'.get_bloginfo("siteurl").'/search-results/">
+	  <div>
+		<input type="text" name="wpm_searchvalue" id="" placeholder="e.g. Title, Description" />
+		<input type="submit" id="searchsubmit" value="Search">
+	  </div>
+	</form>
+</div>
+		
+		</li>';
+    }
+    return $items;
+}
+
+
+function custom_rewrite_basic() {
+  add_rewrite_rule('consultant/?([^/]*)', 'index.php?pagename=consultant&username=$matches[1]', 'top');
+  add_rewrite_rule('viewvideo/?([^/]*)', 'index.php?pagename=viewvideo&videoid=$matches[1]', 'top');
+}
+add_action('init', 'custom_rewrite_basic');
+
+
+function checkProductInUserOrder($userId , $pId){
+	
+	global $wpdb, $sap,$current_user;
+	
+	$sql = "SELECT * FROM {$wpdb->prefix}mp_orders where uid='".$userId."' order by `date` desc";
+	$sql.= ' LIMIT 0,10';
+	$orders = $wpdb->get_results($sql);
+	
+	if ( !is_user_logged_in() ){
+		return false;
+	}
+	if(count($orders)>0){
+		$orderedProductIds = array();
+		foreach($orders as $order){
+			$cart_data = unserialize($order->cart_data);
+			$status = $order->order_status;
+			if($status !== "Completed"){ continue;}
+			if(!empty($cart_data)){
+				foreach($cart_data as $cartItems){ 
+					$productId = $cartItems['ID'];
+					if (!in_array($productId, $orderedProductIds)) {
+						$orderedProductIds[] = $productId;
+					}
+				}
+			}
+		}
+		if(empty($orderedProductIds)){
+			return false;
+		}else if(!in_array($pId, $orderedProductIds)){
+			return false;
+		}else{
+			return true;
+		}
+	}else{
+		return false;
+	}
+
+}
+
+function getVideoIdFromUrl($video_url){
+	$uri = explode('/v/',$video_url);
+	return $uri[1];
+}
+
+function getViddlerData($productId){
+	$vUrl = types_render_field("full-video-url",array("post_id"=>$productId));
+	$vid = getVideoIdFromUrl($vUrl);
+	
+	$vdata['thumbnail'] = 'http://thumbs.cdn-ec.viddler.com/thumbnail_2_'.$vid.'_v1.jpg';
+	$vdata['id'] = $vid;
+	
+	return $vdata;
+}
+
+function formatDate($date){
+	if(!empty($date)){
+		return date('d,M Y',strtotime($date));
+	}
+}
+
+/*
+function getCartQty($cart_data){
+	if(empty($cart_data)){
+		return 0;
+	}
+	$cartQy = 0;
+	foreach($cart_data as $product){
+		$productQty = $product['quantity'];
+		$cartQy  = $cartQy + $productQty;
+	}
+	return $cartQy;
+}*/
+
+add_action( "wp_ajax_nopriv_delete_avtar", "delete_avtar" ); 
+add_action( "wp_ajax_delete_avtar", "delete_avtar" ); 
+function delete_avtar() {
+	$userId = $_POST['userId'];
+	if(!empty($userId)){
+		update_user_meta( $userId, 'wpcf-consultants-image', '' );
+		print_r(0);
+		exit();
+	}
+}
+
+add_action( 'admin_init', 'admin_custom_filter' );
+function admin_custom_filter(){
+	add_action('pre_get_posts', 'query_set_only_author' );
+}
+
+
+function query_set_only_author( $wp_query ) {
+    global $current_user, $pagenow;
+	$userRole = $current_user->roles[0];
+	if($userRole == "consultant"){
+		$wp_query->set( 'author', $current_user->ID );
+		add_filter('views_edit-wpmarketplace', 'fix_post_counts');
+	}
+}
+
+// Fix post counts
+function fix_post_counts($views) {
+    global $current_user, $wp_query;
+	unset($views['mine']);
+    $types = array(
+        array( 'status' =>  NULL ),
+        array( 'status' => 'publish' ),
+        array( 'status' => 'draft' ),
+        array( 'status' => 'pending' ),
+        array( 'status' => 'trash' )
+    );
+    foreach( $types as $type ) {
+        $query = array(
+            'author'      => $current_user->ID,
+            'post_type'   => 'wpmarketplace',
+            'post_status' => $type['status']
+        );
+        $result = new WP_Query($query);
+        if( $type['status'] == NULL ):
+            $class = ($wp_query->query_vars['post_status'] == NULL) ? ' class="current"' : '';
+            $views['all'] = sprintf(__('<a href="%s"'. $class .'>All <span class="count">(%d)</span></a>', 'all'),
+                admin_url('edit.php?post_type=wpmarketplace'),
+                $result->found_posts);
+        elseif( $type['status'] == 'publish' ):
+            $class = ($wp_query->query_vars['post_status'] == 'publish') ? ' class="current"' : '';
+            $views['publish'] = sprintf(__('<a href="%s"'. $class .'>Published <span class="count">(%d)</span></a>', 'publish'),
+                admin_url('edit.php?post_status=publish&post_type=wpmarketplace'),
+                $result->found_posts);
+        elseif( $type['status'] == 'draft' ):
+            $class = ($wp_query->query_vars['post_status'] == 'draft') ? ' class="current"' : '';
+            $views['draft'] = sprintf(__('<a href="%s"'. $class .'>Draft'. ((sizeof($result->posts) > 1) ? "s" : "") .' <span class="count">(%d)</span></a>', 'draft'),
+                admin_url('edit.php?post_status=draft&post_type=wpmarketplace'),
+                $result->found_posts);
+        elseif( $type['status'] == 'pending' ):
+            $class = ($wp_query->query_vars['post_status'] == 'pending') ? ' class="current"' : '';
+            $views['pending'] = sprintf(__('<a href="%s"'. $class .'>Pending <span class="count">(%d)</span></a>', 'pending'),
+                admin_url('edit.php?post_status=pending&post_type=wpmarketplace'),
+                $result->found_posts);
+        elseif( $type['status'] == 'trash' ):
+            $class = ($wp_query->query_vars['post_status'] == 'trash') ? ' class="current"' : '';
+            $views['trash'] = sprintf(__('<a href="%s"'. $class .'>Trash <span class="count">(%d)</span></a>', 'trash'),
+                admin_url('edit.php?post_status=trash&post_type=wpmarketplace'),
+                $result->found_posts);
+        endif;
+    }
+    return $views;
+}
+
+add_action( 'init', 'disablePurchaseForConsultant' );
+function disablePurchaseForConsultant(){
+	global $current_user;
+	$currentuserrole = $current_user->roles[0];
+	if(!empty($current_user->data) && $currentuserrole == "consultant"){
+		$url = explode('?', 'http://'.$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+		$ID = url_to_postid($url[0]);
+		$settings = get_option('_wpmp_settings');  
+		$cartPageId = $settings['page_id'];
+		$checkoutPageId = $settings['check_page_id'];
+		if($ID == $cartPageId || $ID == $checkoutPageId){
+			$cart_data = array();
+			wpmp_update_cart_data($cart_data);
+		}	
+	}
+}
